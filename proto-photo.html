@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+
+
+	<head>
+
+		<tittle>  </tittle>
+		
+		<meta charset="UTF-8" />	
+		<script src="jquery-1.10.2.js"></script>
+
+
+	<style type="text/css">
+
+
+		.fond {
+
+			border: solid 1px black;
+
+			height: 400px;
+			width: 300px;
+
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+
+			overflow: hidden;
+
+		}
+
+
+		.photo {
+
+			border: solid 1px black;
+
+			height: 250px;
+			width: 200px;
+
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 50px;
+				
+		}
+
+		.capture {
+
+			background-color: grey;
+
+			height: 50px;
+			width: 50px;
+
+			border-radius: 50%;
+
+			margin-right: auto;
+			margin-left: auto;
+			margin-top: 30px;
+
+			
+
+		}	
+
+		.pushpicture {
+
+			 
+			-webkit-animation: pushpicture 1s;
+
+		}
+
+		@-webkit-keyframes pushpicture {
+
+		0% { }
+
+		50 % { -webkit-transform: scale(0.5, 0.5); opacity:0.5;}
+
+		100% { opacity: 1;	}
+
+						
+			}
+
+		.takepicture {
+
+			-webkit-animation: takepicture 3s forwards ;
+
+			
+		}
+
+		@-webkit-keyframes takepicture {
+
+		0% { background-color: grey; }
+
+		5% { background-color: white;}
+
+		8% { 	background-image: url("image/winebottle.jpg"); 
+				background-position: center; 
+				background-size: 250px, 200px ; }
+
+		50% { -webkit-transform: translate(-20px, 0px) scale(0.5, 0.5); }
+
+		100% { 	background-image: url("image/winebottle.jpg"); 
+				background-position: center; 
+				background-size: 250px, 200px ;
+				-webkit-transform: translate(500px, 0px) scale(2, 2);
+				 }
+
+						
+			}
+		}
+
+	
+		
+	</style>
+
+	<script>
+
+		
+		$(document).ready(function(){
+  			$(".capture").click(function(){
+  			$(".photo").addClass("takepicture");
+  			$(".capture").addClass("pushpicture");
+    		
+    		});
+    	});
+
+    	$(document).ready(function(){
+  			$("button").click(function(){
+  			$(".photo").removeClass("takepicture");
+    		
+    		
+
+    		});
+    	});
+
+  	
+
+	</script>
+
+	</head>
+
+
+	<body>
+
+		<div class="fond">
+
+		<div class="photo"></div>
+
+		<div class="capture"></div>
+
+		
+		</div>
+
+
+		
+		<button> Stop Animation </button>
+
+
+	
+	</body>
+
+
+</html>

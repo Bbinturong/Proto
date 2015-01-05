@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+
+
+	<head>
+
+		<tittle>  </tittle>
+		
+		<meta charset="UTF-8" />	
+		<script src="jquery-1.10.2.js"></script>
+
+
+	<style type="text/css">
+
+	.fav {
+
+		height: 200px;
+		width: 200px;
+
+		margin-right: auto;
+    margin-left: auto;
+
+    -webkit-transform: translate(0px, 50px);
+
+
+	}
+
+
+.star {
+   margin: 60px 0;
+   position: relative;
+   display: block;
+   width: 0px;
+   height: 0px;
+   border-right:  100px solid transparent;
+   border-bottom: 70px  solid yellow;
+   border-left:   100px solid transparent;
+   -webkit-transform: rotate(35deg);
+
+}
+.star:before {
+   border-bottom: 80px solid yellow;
+   border-left: 30px solid transparent;
+   border-right: 30px solid transparent;
+   position: absolute;
+   height: 0;
+   width: 0;
+   top: -45px;
+   left: -65px;
+   display: block;
+   content: '';
+   -webkit-transform: rotate(-35deg);
+
+}
+.star:after {
+   position: absolute;
+   display: block;
+   top: 3px;
+   left: -105px;
+   width: 0px;
+   height: 0px;
+   border-right: 100px solid transparent;
+   border-bottom: 70px solid yellow;
+   border-left: 100px solid transparent;
+   -webkit-transform: rotate(-70deg);
+   content: '';
+}
+
+.favin {
+
+  -webkit-animation: favin 1s 1s ease-in infinite;
+    
+  }
+
+
+  	@-webkit-keyframes favin {
+  0% {  -webkit-transform: scale3d(1, 1, 1);}
+
+  10%{ -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -5deg);}
+
+  20% { -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -5deg);}
+
+  30%, 50%, 70%, 90% { -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 5deg);}
+
+  40%, 60%, 80% { -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -5deg);}
+
+  100% { -webkit-transform: scale3d(1, 1, 1);}
+
+}
+
+	</style>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+  			$(".star").click(function(){
+  			$(".fav").addClass("favin");
+  			});
+    	});
+
+
+		$(document).ready(function(){
+  			$("button").click(function(){
+    		$(".fav").removeClass("favin");
+    		});
+		});
+
+
+
+	</script>
+
+	</head>
+
+	<body>
+
+		<div class="fav">
+
+		<div class="star">  </div>
+
+		</div>
+		<button> Stop Animation </button>		
+		
+
+	</body>
+
+
+</html>

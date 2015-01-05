@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+
+
+	<head>
+
+		<tittle>  </tittle>
+		
+		<meta charset="UTF-8" />	
+		<script src="jquery-1.10.2.js"></script>
+
+
+	<style type="text/css">
+
+
+		.fond {
+
+			border: solid 1px black;
+
+			height: 400px;
+			width: 300px;
+
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+
+			overflow: hidden;
+
+			
+		}
+
+		nav {
+
+			position: absolute;
+
+			background-color: #a80f38;
+
+
+			height: 50px;
+			width: 300px;
+
+			
+			transform: translate(0, 300px);
+
+		}
+
+		ul {
+
+			margin: 0px;
+		}
+
+		li {
+
+			background-color: yellow;
+
+			list-style: none;
+
+			float: left;
+
+			height: 50px;
+			width: 50px;
+
+			margin-right: 30px;
+		
+		}
+
+		li:first-child {
+
+			background-image: url("image/acceuil.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 60px, 50px;
+		}
+
+		li:last-child {
+
+			background-image: url("image/fav.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 60px, 50px;
+		}
+
+		.mid {
+
+			background-image: url("image/photo.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 60px, 50px;
+		}
+
+		.capture {
+
+			border: solid 2px black;
+
+			height: 50px;
+			width: 50px;
+
+			border-radius: 50%;
+
+			margin-right: auto;
+			margin-left: auto;
+
+
+			transform: translate(0, 400px);
+
+		}	
+
+		.fadeout {
+
+		  -webkit-animation: fadeout 2s  ease-out forwards; 
+
+		  	  
+
+		 }
+
+		@-webkit-keyframes fadeout {
+
+		  0% { opacity: 1; }
+
+		  80% {-webkit-transform: translate(0, 500px);}
+
+		  100% { opacity: 0;  }
+		}
+
+
+		.fadein {
+
+		  -webkit-animation: fadein 2s  ease-in forwards;
+		 }
+
+		@-webkit-keyframes fadein {
+
+		  0% { opacity: 0; }
+
+		  30% { opacity:1; -webkit-transform: translate(0, 330px);}
+
+		  100% { -webkit-transform: translate(0, 330px);}
+		}
+
+
+
+
+
+
+	</style>
+
+	<script>
+
+		
+		$(document).ready(function(){
+  			$(".mid").click(function(){
+  			$(".capture").addClass("fadein");
+    		$(".nav").addClass("fadeout");
+    		
+
+    		});
+    	});
+
+    	
+    
+
+
+
+		$(document).ready(function(){
+  			$("button").click(function(){
+  			$(".capture").removeClass("fadein");
+    		$(".nav").removeClass("fadeout");
+    		
+    		});
+		});
+
+
+
+	</script>
+
+	</head>
+
+
+	<body>
+
+		<div class="fond">
+
+		<div class="capture"></div>
+
+		<nav class="nav">
+
+
+			
+			<ul>
+			<li ></li>
+			<li class="mid" ></li>
+			<li ></li>
+
+			</ul>
+
+		
+
+		</nav>
+		
+		</div>
+
+
+		
+		<button> Stop Animation </button>
+
+
+	
+	</body>
+
+
+</html>

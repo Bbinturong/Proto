@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+
+        <title> Prototype Workshop </title>
+                <meta charset="utf-8" />
+                <script src="jquery-1.10.2.js"></script>
+                
+                <style type="text/css">
+
+        div {
+
+            border: solid 1px black;
+
+            height: 400px;
+            width: 300px;
+
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+
+            overflow: hidden;
+
+                        
+        }
+
+        ul {
+
+            margin: 0px;
+            
+            
+        }
+
+        li {
+
+            background-color: yellow;
+
+            list-style: none;
+
+           
+            height: 50px;
+            width: 100px;
+
+            margin: 30px;
+            -webkit-transform: translate(300px, 0px);
+        
+        }
+
+
+        .fadein {
+
+          -webkit-animation: fadein 2s 1 ;
+       
+         }
+
+        @-webkit-keyframes fadein {
+
+        0% { -webkit-transform: translate(200px, 0px); }
+
+        100% { -webkit-transform: translate(0px, 0px);}
+
+         }
+
+             
+        </style>
+
+        <script type="text/javascript">
+
+
+        $(document).ready(function(){
+            $("button").click(function(){
+            $("li").addClass("fadein");
+            
+            
+
+            });
+        });
+
+      
+       </script>
+
+
+
+    </head>
+
+    <body>
+
+        <div>
+
+        <button> Here </button>
+
+            <ul>
+
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+
+            </ul>
+
+        </div>
+
+      
+   </body>
+
+
+</html>
+
+
+
